@@ -27,7 +27,35 @@ class Screen(tk.Frame):
         
     def main():
         Screen.current = 0
-        Screen.switch_frame()   
+        Screen.switch_frame()  
+        
+class MainMenu(Screen):
+    def __init__(self):
+        Screen.__init__(self)
+        
+class Factoring(Screen):
+    def __init__(self):
+        Screen.__init__(self)
+        
+class Quadratic(Screen):
+    def __init__(self):
+        Screen.__init__(self)
+        
+class Trigonometry(Screen):
+    def __init__(self):
+        Screen.__init__(self)
+        
+class Radicals(Screen):
+    def __init__(self):
+        Screen.__init__(self)
+        
+class Limits(Screen):
+    def __init__(self):
+        Screen.__init__(self)
+        
+class StudySets(Screen):
+    def __init__(self):
+        Screen.__init__(self)
         
 #----MAIN---------------------------------------------------------
 
@@ -42,15 +70,22 @@ if __name__ == "__main__":
     
     screens = []
     
-    screens.append(MainMenu())   #MainMenu  =  screens[0]    
-    screens.append(Search())     #Search    =  screens[1]
-    screens.append(AddEdit())    #AddEdit   =  screens[2]
-    screens.append(Remove())     #Remove    =  screens[3]
+    screens.append(MainMenu())      #screens[0] = MainMenu  
+    screens.append(Factoring())     #screens[1] = Factoring 
+    screens.append(Quadratic())     #screens[2] = Quadratic
+    screens.append(Trigonometry())  #screens[3] = Trigonometry 
+    screens.append(Radicals())      #screens[4] = Radicals
+    screens.append(Limits())        #screens[5] = Limits
+    screens.append(StudySets())     #screens[6] = StudySets
     
     screens[0].grid(row = 0, column = 0, sticky = "news")  
     screens[1].grid(row = 0, column = 0, sticky = "news")
     screens[2].grid(row = 0, column = 0, sticky = "news")
     screens[3].grid(row = 0, column = 0, sticky = "news")
+    screens[4].grid(row = 0, column = 0, sticky = "news")
+    screens[5].grid(row = 0, column = 0, sticky = "news")
+    screens[6].grid(row = 0, column = 0, sticky = "news")
+    
     
     Screen.current = 0
     Screen.switch_frame()
