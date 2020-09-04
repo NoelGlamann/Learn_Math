@@ -43,8 +43,8 @@ class MainMenu(Screen):
         self.lbl_intro = tk.Label(self, text = "Study Topics:",
                              font = ("Times", "20"))
         self.lbl_intro.grid(row = 2, 
-                       column = 0, 
-                       columnspan = 3,
+                       column = 0,
+                       columnspan = 3,                       
                        sticky = "news")
         
         self.btn_fact = tk.Button(self, text = "Factoring Nomials",
@@ -73,7 +73,7 @@ class MainMenu(Screen):
                                  font = ("Courier", "15"))
         self.btn_rad.grid(row = 6, 
                      column = 1, 
-                       sticky = "news") 
+                       sticky = "news")
         
         self.btn_lim = tk.Button(self, text = "Understanding Limits",
                                  command = self.limits,
@@ -92,7 +92,7 @@ class MainMenu(Screen):
         self.grid_columnconfigure(0, weight = 1)
         self.grid_columnconfigure(2, weight = 1)
         self.grid_rowconfigure(1, weight = 2)
-        self.grid_rowconfigure(8, weight = 2)
+        self.grid_rowconfigure(8, weight = 1)
         self.grid_rowconfigure(10, weight = 2)
         
         
@@ -139,7 +139,7 @@ if __name__ == "__main__":
     
     '''creating a main screen'''
     root = tk.Tk()
-    #root.geometry('1000x600')
+    root.geometry('800x600')
     root.title("Movie Library NG")
     root.grid_columnconfigure(0, weight = 1)
     root.grid_rowconfigure(0, weight = 1)
