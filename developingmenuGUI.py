@@ -98,16 +98,22 @@ class MainMenu(Screen):
         
     def factoring(self):
         Screen.current = 1
+        Screen.switch_frame()
     def quadratic(self):
         Screen.current = 2
+        Screen.switch_frame()
     def trigonometry(self):
-        Screen.current = 3  
+        Screen.current = 3
+        Screen.switch_frame()
     def radicals(self):
         Screen.current = 4
+        Screen.switch_frame()
     def limits(self):
         Screen.current = 5
+        Screen.switch_frame()
     def sets(self):
         Screen.current = 6
+        Screen.switch_frame()
             
 class Factoring(Screen):
     def __init__(self):
