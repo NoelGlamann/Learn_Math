@@ -12,7 +12,7 @@ lessons to help users with their most exciting work. '''
 
 #----FUNCTIONS---------------------------------------------------
 
-def menu():
+def Menu():
     print()
     print('''        WELCOME TO 
         LEARN MATH
@@ -21,7 +21,10 @@ def menu():
     print("Let's get studying!")
     print('''
     1. Factoring
-    2. Limits
+    2. Quadratic
+    3. Trigonometry
+    4. Radicals
+    5. Limits
     ''')
     choice = input("What are we studying today (1, 2, 3...) ? ")
     choice = int(choice)
@@ -31,14 +34,13 @@ def menu():
         b. Trinomials
         ''')
         specified = input("Please specify: ")
-        selection(specified)
+        Selection(specified)
     else:
-        selection(choice)
+        Selection(choice)
     
-def selection(choice):
+def Selection(choice):
     if type(choice) == int:
-        if choice == 1:
-            print("1")
+        
         if choice == 2:
             print("2")
         if choice == 3:
@@ -48,8 +50,15 @@ def selection(choice):
         if choice == 5:
             print("5")
     else:
-        print("That's a letter!")
+        if choice == "a":
+            BinomialFactoring()
+        if choice == "b":
+            trinomials()
+
+def BinomialFactoring():
+    print("Factoring Binomials:")
+    print("--------------------")
 
 #----PROGRAM-----------------------------------------------------
 
-menu()
+Menu()
