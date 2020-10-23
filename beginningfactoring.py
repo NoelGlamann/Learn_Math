@@ -34,7 +34,8 @@ class MainMenu(Screen):
     def __init__(self):
         Screen.__init__(self)
         
-        self.lbl_title = tk.Label(self, text = "LEARN MATH",
+        self.lbl_title = tk.Label(self, text = "LEARN MATH", 
+                                  bg = "lightgrey", fg = "black",
                              font = ("Times", "40"))
         self.lbl_title.grid(row = 0, 
                        column = 0, 
@@ -49,6 +50,8 @@ class MainMenu(Screen):
                        sticky = "news")
         
         self.btn_fact = tk.Button(self, text = "Factoring Nomials",
+                                  activebackground = "lightcoral",
+                                  activeforeground = "black",
                                  command = self.factoring,
                                  font = ("Courier", "15"))
         self.btn_fact.grid(row = 3, 
@@ -56,6 +59,8 @@ class MainMenu(Screen):
                        sticky = "news")     
         
         self.btn_quad = tk.Button(self, text = "Quadratic Equations",
+                                  activebackground = "peachpuff",
+                                  activeforeground = "black",
                                  command = self.quadratic,
                                  font = ("Courier", "15"))
         self.btn_quad.grid(row = 4, 
@@ -63,6 +68,8 @@ class MainMenu(Screen):
                        sticky = "news") 
         
         self.btn_rad = tk.Button(self, text = "Solving Radicals",
+                                  activebackground = "palegreen",
+                                  activeforeground = "black",
                                  command = self.radicals,
                                  font = ("Courier", "15"))
         self.btn_rad.grid(row = 5, 
@@ -70,6 +77,8 @@ class MainMenu(Screen):
                        sticky = "news")
         
         self.btn_tri = tk.Button(self, text = "Rules of Trigonometry",
+                                  activebackground = "powderblue",
+                                  activeforeground = "black",
                                  command = self.trigonometry,
                                  font = ("Courier", "15"))
         self.btn_tri.grid(row = 6, 
@@ -79,6 +88,8 @@ class MainMenu(Screen):
         
         
         self.btn_lim = tk.Button(self, text = "Understanding Limits",
+                                  activebackground = "thistle",
+                                  activeforeground = "black",
                                  command = self.limits,
                                  font = ("Courier", "15"))
         self.btn_lim.grid(row = 7, 
@@ -86,6 +97,8 @@ class MainMenu(Screen):
                        sticky = "news")
         
         self.btn_ss = tk.Button(self, text = "Study Sets",
+                                  activebackground = "pink",
+                                  activeforeground = "black",
                                  command = self.sets,
                                  font = ("Courier", "15"))
         self.btn_ss.grid(row = 9, 
@@ -123,6 +136,7 @@ class FactoringM(Screen):
         Screen.__init__(self)
         
         self.lbl_title = tk.Label(self, text = "Let's Start Factoring",
+                                  fg = "lightcoral",
                              font = ("Times", "36"))
         self.lbl_title.grid(row = 0, 
                        column = 0, 
@@ -137,17 +151,20 @@ class FactoringM(Screen):
         
         
         self.btn_poltut = tk.Button(self, text = "Polynomial Tutorials", 
+                                    activeforeground="lightcoral",
                                     command = self.polytut,
                                     font = ("Courier New", "15"))
         self.btn_poltut.grid(row = 2,
                           column = 1,
                           sticky = "news")
         self.btn_polprac = tk.Button(self, text = "Polynomial Practice Problems", 
+                                    activeforeground="lightcoral",
                                  font = ("Courier New", "15"))
         self.btn_polprac.grid(row = 3,
                           column = 1,
                           sticky = "news")
         self.btn_polquiz = tk.Button(self, text = "Polynomial Factoring Quiz", 
+                                    activeforeground="lightcoral",
                                  font = ("Courier New", "15"))
         self.btn_polquiz.grid(row = 4,
                           column = 1,
@@ -161,17 +178,20 @@ class FactoringM(Screen):
                        sticky = "news")  
         
         
-        self.btn_tritut = tk.Button(self, text = "Trinomial Tutorials", 
+        self.btn_tritut = tk.Button(self, text = "Trinomial Tutorials",
+                                    activeforeground="lightcoral", 
                                  font = ("Courier New", "15"))
         self.btn_tritut.grid(row = 6,
                           column = 1,
                           sticky = "news")
         self.btn_triprac = tk.Button(self, text = "Trinomial Practice Problems", 
+                                    activeforeground="lightcoral",
                                  font = ("Courier New", "15"))
         self.btn_triprac.grid(row = 7,
                           column = 1,
                           sticky = "news")
         self.btn_triquiz = tk.Button(self, text = "Trinomial Factoring Quiz", 
+                                    activeforeground="lightcoral",
                                  font = ("Courier New", "15"))
         self.btn_triquiz.grid(row = 8,
                           column = 1,
@@ -465,6 +485,7 @@ if __name__ == "__main__":
     #beginning actual functions
     screens.append(FactoringPolynomialsTutorial())     #screens[7] 
     
+    
     screens[0].grid(row = 0, column = 0, sticky = "news")  
     screens[1].grid(row = 0, column = 0, sticky = "news")
     screens[2].grid(row = 0, column = 0, sticky = "news")
@@ -472,7 +493,7 @@ if __name__ == "__main__":
     screens[4].grid(row = 0, column = 0, sticky = "news")
     screens[5].grid(row = 0, column = 0, sticky = "news")
     screens[6].grid(row = 0, column = 0, sticky = "news")
-
+    screens[7].grid(row = 0, column = 0, sticky = "news")
     
     
     Screen.current = 0
