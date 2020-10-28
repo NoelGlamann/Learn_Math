@@ -150,23 +150,23 @@ class FactoringM(Screen):
                        sticky = "news") 
         
         
-        self.btn_poltut = tk.Button(self, text = "Polynomial Tutorials", 
+        self.btn_bitut = tk.Button(self, text = "Binomial Tutorials", 
                                     activeforeground="lightcoral",
-                                    command = self.polytut,
+                                    command = self.bitut,
                                     font = ("Courier New", "15"))
-        self.btn_poltut.grid(row = 2,
+        self.btn_bitut.grid(row = 2,
                           column = 1,
                           sticky = "news")
-        self.btn_polprac = tk.Button(self, text = "Polynomial Practice Problems", 
+        self.btn_biprac = tk.Button(self, text = "Binomial Practice Problems", 
                                     activeforeground="lightcoral",
                                  font = ("Courier New", "15"))
-        self.btn_polprac.grid(row = 3,
+        self.btn_biprac.grid(row = 3,
                           column = 1,
                           sticky = "news")
-        self.btn_polquiz = tk.Button(self, text = "Polynomial Factoring Quiz", 
+        self.btn_biquiz = tk.Button(self, text = "Binomial Factoring Quiz", 
                                     activeforeground="lightcoral",
                                  font = ("Courier New", "15"))
-        self.btn_polquiz.grid(row = 4,
+        self.btn_biquiz.grid(row = 4,
                           column = 1,
                           sticky = "news")
         
@@ -217,13 +217,148 @@ class FactoringM(Screen):
     def goback(self): 
         Screen.current = 0
         Screen.switch_frame()  
-    def polytut(self):
+    def bitut(self):
         Screen.current = 7
         Screen.switch_frame()
 
-class FactoringPolynomialsTutorial(Screen):
+class FactoringBinomialsTutIntro(Screen):
     def __init__(self):
-        Screen.__init__(self)        
+        Screen.__init__(self)  
+        
+        self.btn_intro = tk.Button(self, text = "Intro",
+                                   bg = "lightcoral",
+                                 font = ("Courier New", "15"))
+        self.btn_intro.grid(row = 0, 
+                            column = 0,
+                            sticky = "news")
+        
+        self.btn_factoring = tk.Button(self, text = "Factoring",
+                                    command = self.bitutfactoring,
+                                 font = ("Courier New", "15"))
+        self.btn_factoring.grid(row = 1, 
+                            column = 0)
+        
+        self.btn_expanding = tk.Button(self, text = "Expanding",
+                                       command = self.bitutexpanding,
+                                 font = ("Courier New", "15"))
+        self.btn_expanding.grid(row = 2, 
+                            column = 0)
+        self.lbl_title = tk.Label(self, text = "Binomial Tutorial",
+                                  fg = "lightcoral", 
+                                  font = ("Courier New", "30"))
+        self.lbl_title.grid(row = 0,
+                            column = 1, 
+                            columnspan = 2)
+        
+        self.lbl_define = tk.Label(self, text = "Binomial: An algebraic polynomial ",
+                                         font = ("Courier New", "18"))
+        self.lbl_define.grid(row = 2, 
+                             column = 1,
+                             columnspan=2)
+        
+        self.lbl_define2 = tk.Label(self, text = "      with only two terms.",
+                                         font = ("Courier New", "18"))
+        self.lbl_define2.grid(row = 3, 
+                             column = 1,
+                             columnspan=2) 
+        
+        self.lbl_space = tk.Label(self, text = " ",
+                             font = ("Times", "30"))
+        self.lbl_space.grid(row = 4, 
+                       column = 1, 
+                       sticky = "news")    
+        
+        self.lbl_ex = tk.Label(self, text = "    Ex:",
+                                         font = ("Courier New", "15"))
+        self.lbl_ex.grid(row = 5, 
+                             column = 1)  
+        
+        self.lbl_exequ = tk.Label(self, text = "y = (x)(-x)",
+                                         font = ("Courier New", "18"))
+        self.lbl_exequ.grid(row = 5, 
+                             column = 2)     
+        
+        self.lbl_blah = tk.Label(self, text = "This is a very basic binomial equation.",
+                                         font = ("Courier New", "15"))
+        self.lbl_blah.grid(row = 6, 
+                             column = 2)    
+        
+        self.lbl_blah2 = tk.Label(self, text = "Let's get into the harder stuff!",
+                                         font = ("Courier New", "15"))
+        self.lbl_blah2.grid(row = 7, 
+                             column = 2)      
+        
+        
+        self.grid_columnconfigure(2, weight = 1)
+        self.grid_columnconfigure(4, weight = 1)
+        
+    def bitutfactoring(self):
+        Screen.current = 8
+        Screen.switch_frame()
+    def bitutexpanding(self):
+        Screen.current = 9
+        Screen.switch_frame()
+        
+class FactoringBinomialsTutFactoring(Screen):
+    def __init__(self):
+        Screen.__init__(self)  
+        
+        self.btn_intro = tk.Button(self, text = "Intro",
+                                   command = self.bitutintro,
+                                 font = ("Courier New", "15"))
+        self.btn_intro.grid(row = 0, 
+                            column = 0, 
+                       sticky = "news")
+        
+        self.btn_factoring = tk.Button(self, text = "Factoring",
+                                   bg = "lightcoral",
+                                 font = ("Courier New", "15"))
+        self.btn_factoring.grid(row = 1, 
+                            column = 0)
+        
+        self.btn_expanding = tk.Button(self, text = "Expanding",
+                                       command = self.bitutexpanding,
+                                 font = ("Courier New", "15"))
+        self.btn_expanding.grid(row = 2, 
+                            column = 0)
+        
+    def bitutintro(self):
+        Screen.current = 7
+        Screen.switch_frame()
+    def bitutexpanding(self):
+        Screen.current = 9
+        Screen.switch_frame()
+        
+        
+class FactoringBinomialsTutExpanding(Screen):
+    def __init__(self):
+        Screen.__init__(self)  
+        
+        self.btn_intro = tk.Button(self, text = "Intro",
+                                   command = self.bitutintro,
+                                 font = ("Courier New", "15"))
+        self.btn_intro.grid(row = 0, 
+                            column = 0, 
+                       sticky = "news")
+        
+        self.btn_factoring = tk.Button(self, text = "Factoring",
+                                    command = self.bitutfactoring,
+                                 font = ("Courier New", "15"))
+        self.btn_factoring.grid(row = 1, 
+                            column = 0)
+        
+        self.btn_expanding = tk.Button(self, text = "Expanding",
+                                   bg = "lightcoral",
+                                 font = ("Courier New", "15"))
+        self.btn_expanding.grid(row = 2, 
+                            column = 0)
+        
+    def bitutintro(self):
+        Screen.current = 7
+        Screen.switch_frame()
+    def bitutfactoring(self):
+        Screen.current = 8
+        Screen.switch_frame()
         
 class QuadraticM(Screen):
     def __init__(self):
@@ -482,8 +617,10 @@ if __name__ == "__main__":
     screens.append(TrigonometryM())  #screens[4] = TrigonometryM
     screens.append(LimitsM())        #screens[5] = LimitsM
     screens.append(StudySetsM())     #screens[6] = StudySetsM
-    #beginning actual functions
-    screens.append(FactoringPolynomialsTutorial())     #screens[7] 
+    #factoring functions
+    screens.append(FactoringBinomialsTutIntro())     #screens[7] 
+    screens.append(FactoringBinomialsTutFactoring()) #screens[8] 
+    screens.append(FactoringBinomialsTutExpanding()) #screens[9] 
     
     
     screens[0].grid(row = 0, column = 0, sticky = "news")  
@@ -494,6 +631,8 @@ if __name__ == "__main__":
     screens[5].grid(row = 0, column = 0, sticky = "news")
     screens[6].grid(row = 0, column = 0, sticky = "news")
     screens[7].grid(row = 0, column = 0, sticky = "news")
+    screens[8].grid(row = 0, column = 0, sticky = "news")
+    screens[9].grid(row = 0, column = 0, sticky = "news")
     
     
     Screen.current = 0
